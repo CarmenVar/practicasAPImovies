@@ -73,3 +73,18 @@ btnBuscar.addEventListener('click', () => {
 
 // Llamada inicial para que la web no abra vacía
 cargarPeliculas();
+// Evento para el botón Siguiente
+btnSiguiente.addEventListener('click', () => {
+    if (paginaAPI < 1000) { // Límite de páginas de la API
+        paginaAPI += 1;
+        cargarPeliculas();
+    }
+});
+
+// Evento para el botón Anterior
+btnAnterior.addEventListener('click', () => {
+    if (paginaAPI > 1) {
+        paginaAPI -= 1;
+        cargarPeliculas();
+    }
+});
